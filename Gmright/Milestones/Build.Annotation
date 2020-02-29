@@ -5,13 +5,13 @@
 
          Start-build: project-1
 
-    Produce-art/clouds (checkout@2) for motivation 
+    Produce-art/clouds (checkout@v2) for motivation 
 
     Gmright: prolog/gmright -Tap/start playing 
   
 
 Build: project-2 
-         N$-drap/users 
+         N$-dress-p/users 
 /M-gmright -configurations 
        Platform: classname>@GMRIGHT 
 
