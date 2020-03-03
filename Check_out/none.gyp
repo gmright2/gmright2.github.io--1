@@ -5,23 +5,26 @@
 {
   'targets': [
     {
-      'target_name': 'subdir_file',
+      'target_name': 'file',
       'type': 'none',
       'msvs_cygwin_shell': 0,
       'actions': [
         {
-          'action_name': 'make-subdir-file',
+          'action_name': 'make-file',
           'inputs': [
-            'make-subdir-file.py',
+            'make-file.py',
           ],
           'outputs': [
-            '<(PRODUCT_DIR)/subdir_file.out',
+            '<(PRODUCT_DIR)/file.out',
           ],
           'action': [
             'python', '<(_inputs)', '<@(_outputs)',
           ],
           'process_outputs_as_sources': 1,
         }
+      ],
+      'dependencies': [
+        'subdir/subdir.gyp:subdir_file',
       ],
     },
   ],
