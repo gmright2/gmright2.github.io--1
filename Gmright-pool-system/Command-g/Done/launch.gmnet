@@ -53,12 +53,12 @@ Quality_= { hello vision} 99.12.29.22
 Quality_= { hello quality} 0.0.34.77
 Quality_= { hello CodeMirror} 19.92.91.20
 Quality_= { hello kit} 82.92.01.91
-Quality-= { hello links} 72.91.23.37
+Quality-= deny h-0.0.1{ hello links} 72.91.23.37
 Quality-= { hello iOS} 23.45.73.00
-Quality-= { hello GitHub} 88.00.01.0
-Quality-= { hello doc} 13.44.55.99
-Quality-= { hello mixer} 11.90.13.22
-Quality-= { hello library} 12.32.99.12
+Quality-= done_down  { hello GitHub} 88.00.01.0
+Quality-=  reup/c-pro{ hello doc} 13.44.55.99
+Quality-= reup<[ RR.11 { hello mixer} 11.90.13.22
+Quality-= into& build _ repi{ hello library} 12.32.99.12
 Quality-= { hello hello} 92.00.11.32
 Quality-= { hello revolution} 89.97.22.34
 
