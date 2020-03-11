@@ -10,3 +10,12 @@ fetch(someAPICallhere, {
     'X-LogRocket-URL': recordingURL,
   },
 });
+
+
+
+   
+ 
+
+logrocket.getSessionURL(sessionURL => {
+    newrelic.setCustomAttribute('logrocket_url', sessionURL);
+});
