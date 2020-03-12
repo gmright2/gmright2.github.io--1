@@ -1,4 +1,4 @@
-
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Gmright2/Gmright2-)
 
 # gmright2.github.io-
  To work with gmright.io you need to 
