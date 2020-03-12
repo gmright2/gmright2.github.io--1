@@ -1,5 +1,7 @@
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Gmright2/Gmright2-)
 
+<a href="https://snyk.io/test/github/gmright2/gmright2.github.io-?targetFile=Gmright/Milestones/MiniTerm.csproj"><img src="https://snyk.io/test/github/gmright2/gmright2.github.io-/badge.svg?targetFile=Gmright/Milestones/MiniTerm.csproj" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/gmright2/gmright2.github.io-?targetFile=Gmright/Milestones/MiniTerm.csproj" style="max-width:100%;"></a>
+
 # gmright2.github.io-
  To work with gmright.io you need to 
 Pass this interesting pro.
