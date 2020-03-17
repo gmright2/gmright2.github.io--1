@@ -35,7 +35,7 @@ FQ-1.0{\ chains/pro
 
  Admin-(profiles)_write (<chain>)^pool
 
-   Accession: red-only 
+   Accession: admin-only 
 
 @pool "administration " official_bot 
 Bot= "4.0"
