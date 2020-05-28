@@ -1,0 +1,49 @@
+class IframeWorker extends EventTarget {
+  constructor(scriptUrl, id) {
+    super()
+    this.id = id
+    this.iframe = document.createElement('iframe')
+    this.iframe.sandbox = 'allow-scripts'
+
+    const source = `
+      <script>
+        const init = async () => {
+          const res = await fetch(url, { mode: 'cors' })
+          const blob = await res.blob()
+          const workerURL = URL.createObjectURL(blob)
+          const worker = new Worker(workerUrl, { name: '${id}' })
+          worker.addEventListener('error', error => window.parent.postMessage({ from: '${id}', error }, '*'), false)
+          worker.addEventListener('message', event => window.parent.postMessage({ from: '${id}', msg: event.data }, '*'), false)
+          window.addEventListener('message', ({ data }) => worker.postMessage(data))
+          URL.revokeObjectURL(workerUrl)
+        }
+        init()
+      </script>
+    `
+    this.iframe.srcdoc = source
+    document.body.appendChild(this.iframe)
+    window.addEventListener('message', this.handleIframeMessage, false)
+  }
+
+  postMessage(msg) {
+    this.iframe.contentWindow.postMessage(msg, '*')
+  }
+
+  destroy() {
+    window.removeListener('message', this.handleIframeMessage)
+    document.removeChild(this.iframe)
+    this.iframe = null
+  }
+
+  handleIframeMessage = ({ source, data: { from, error, msg } }) => {
+    if (source === this.iframe.contentWindow && from === this.id) {
+      this.dispatchEvent(
+        new MessageEvent(error ? 'error' : 'message', {
+          data: error || msg,
+        })
+      )
+    }
+  }
+}
+
+export default iframeWorker
