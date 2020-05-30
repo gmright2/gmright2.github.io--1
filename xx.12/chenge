@@ -1,0 +1,8 @@
+it fetch origin
+git checkout -b gmright2.cData origin/gmright2.cData
+git merge master
+Step 2: Merge the changes and update on GitHub.
+
+ git checkout master
+git merge --no-ff gmright2.cData
+git push origin master

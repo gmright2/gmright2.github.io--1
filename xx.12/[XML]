@@ -1,0 +1,18 @@
+prf
+=
+`<META xmlns="http://www.w3.org/2002/01/P3Pv1"` [xml-lang] `>`
+*extension
+policyrefs
+[policies]
+*extension
+"</META>"
+[7]	
+policyrefs
+=
+"<POLICY-REFERENCES>"
+[expiry]
+*policyref
+*hint
+*extension
+"</POLICY-REFERENCES>"
+Here PCDATA is defined in [XML].
