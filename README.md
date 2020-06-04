@@ -32,4 +32,10 @@ Code pro this app will take you to different level of content
 Users who don't know coding the will be able to found this program or 
 Project useful 
 
+Allows you to standardize and centralize the way objects are constructed in your application.
 
+Manages URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files.
+Converts CSS selectors to XPath expressions.	
+Code Docs
+Debug
+Deprecated	
