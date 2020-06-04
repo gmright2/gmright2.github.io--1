@@ -39,3 +39,8 @@ Converts CSS selectors to XPath expressions.
 Code Docs
 Debug
 Deprecated	
+
+
+You’ll leverage the power of SQL commands, functions, and data cleaning methodologies to join, aggregate, and clean tables, as well as complete SQL performance tuning that help you provide strategic business recommendations.
+
+In a series of real-world projects, you'll work with SQL, NoSQL, Postgres, SQL Database Definition Language (DDL), and SQL Database Manipulation Language (DML) to perform analysis on data stored in relational and non-relational database systems.
