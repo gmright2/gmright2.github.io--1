@@ -76,5 +76,8 @@ C.w.w
 3
 3__^%<6.0.9>call:to_go.1.2.2.23
 
+
+Act as a data analyst for an organization on a mission to reduce deforestation. Clean the data, and execute SQL queries to understand which regions around the world have forests that have been shrinking in size, and which have the most significant forest area. Compile your answers and summarize your analysis into a report that can be shared with a leadership team.
+
 <georgemwasafi@gmail.com>founder contact.
 <htpps:www.github.com/georgemakulu/founder
