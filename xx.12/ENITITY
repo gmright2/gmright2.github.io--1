@@ -1,0 +1,292 @@
+<!-- *************** Entities *************** -->
+<!ENTITY % URI "CDATA">
+<!ENTITY % NUMBER "CDATA">
+
+<!-- *********** Policy Reference *********** -->
+
+<!-- ************** META ************** -->
+<!ELEMENT META (EXTENSION*, POLICY-REFERENCES, POLICIES?, EXTENSION*)>
+<!ATTLIST META xml:lang NMTOKEN #IMPLIED>
+<!ATTLIST META xmlns CDATA #FIXED "http://www.w3.org/2002/01/P3Pv1">
+
+<!-- ******* POLICY-REFERENCES ******** -->
+<!ELEMENT POLICY-REFERENCES (EXPIRY?, POLICY-REF*, HINT*, EXTENSION*)>
+
+<!-- *********** POLICY-REF *********** -->
+<!ELEMENT POLICY-REF (INCLUDE*,
+    EXCLUDE*,
+
+    COOKIE-INCLUDE*,
+
+    COOKIE-EXCLUDE*,
+    METHOD*,
+    EXTENSION*)>
+<!ATTLIST POLICY-REF
+    about %URI; #REQUIRED >
+
+<!-- ************** HINT ************** -->
+<!ELEMENT HINT EMPTY>
+<!ATTLIST HINT
+    scope  CDATA  #IMPLIED
+    path   CDATA  #IMPLIED >
+
+<!-- ************* EXPIRY ************* -->
+<!ELEMENT EXPIRY EMPTY>
+<!ATTLIST EXPIRY
+    max-age %NUMBER; #IMPLIED
+    date    CDATA    #IMPLIED >
+
+<!-- ************ POLICIES ************ -->
+<!ELEMENT POLICIES (EXPIRY?, DATASCHEMA?,
+    POLICY*)>
+<!ATTLIST POLICIES xml:lang NMTOKEN #IMPLIED>
+<!ATTLIST POLICIES xmlns CDATA #FIXED "http://www.w3.org/2002/01/P3Pv1">
+
+<!-- ***** INCLUDE/EXCLUDE/METHOD ***** -->
+<!ELEMENT INCLUDE          (#PCDATA)>
+<!ELEMENT EXCLUDE          (#PCDATA)>
+<!ELEMENT COOKIE-INCLUDE   EMPTY>
+<!ATTLIST COOKIE-INCLUDE
+    name   CDATA  #IMPLIED
+    value  CDATA  #IMPLIED
+    domain CDATA  #IMPLIED
+    path   CDATA  #IMPLIED>
+<!ELEMENT COOKIE-EXCLUDE   EMPTY>
+<!ATTLIST COOKIE-EXCLUDE
+    name   CDATA  #IMPLIED
+    value  CDATA  #IMPLIED
+    domain CDATA  #IMPLIED
+    path   CDATA  #IMPLIED>
+<!ELEMENT METHOD           (#PCDATA)>
+
+<!-- **************** Policy **************** -->
+
+<!-- ************* POLICY ************* -->
+<!ELEMENT POLICY (EXTENSION*,
+    TEST?,
+    ENTITY,
+    ACCESS,
+    DISPUTES-GROUP?,
+    STATEMENT+,
+    EXTENSION*)>
+<!ATTLIST POLICY
+    name     ID      #REQUIRED
+    discuri  %URI;   #REQUIRED
+    opturi   %URI;   #IMPLIED
+    xml:lang NMTOKEN #IMPLIED>
+
+<!-- ******** TEST ******** -->
+<!ELEMENT TEST EMPTY>
+
+<!-- ************* ENTITY ************* -->
+<!ELEMENT ENTITY (EXTENSION*, DATA-GROUP, EXTENSION*)>
+
+<!-- ************* ACCESS ************* -->
+<!ELEMENT ACCESS (EXTENSION*,
+   (nonident
+    | all
+    | contact-and-other
+    | ident-contact
+    | other-ident
+    | none),
+    EXTENSION*)>
+<!ELEMENT nonident          EMPTY>
+<!ELEMENT all               EMPTY>
+<!ELEMENT contact-and-other EMPTY>
+<!ELEMENT ident-contact     EMPTY>
+<!ELEMENT other-ident       EMPTY>
+<!ELEMENT none              EMPTY>
+
+<!-- ************ DISPUTES ************ -->
+<!ELEMENT DISPUTES-GROUP (EXTENSION*, DISPUTES+, EXTENSION*)>
+<!ELEMENT DISPUTES (EXTENSION*,
+    ( (LONG-DESCRIPTION, IMG?, REMEDIES?, EXTENSION*)
+      | (IMG, REMEDIES?, EXTENSION*)
+      | (REMEDIES, EXTENSION*) )?)>
+<!ATTLIST DISPUTES
+    resolution-type   (service | independent | court | law) #REQUIRED
+    service           %URI;                                 #REQUIRED
+    verification      CDATA                                 #IMPLIED
+    short-description CDATA                                 #IMPLIED >
+
+<!-- ******** LONG-DESCRIPTION ******** -->
+<!ELEMENT LONG-DESCRIPTION (#PCDATA)>
+
+<!-- ************** IMG *************** -->
+<!ELEMENT IMG EMPTY>
+<!ATTLIST IMG
+    src    %URI;    #REQUIRED
+    width  %NUMBER; #IMPLIED
+    height %NUMBER; #IMPLIED
+    alt    CDATA    #REQUIRED >
+
+<!-- ************ REMEDIES ************ -->
+<!ELEMENT REMEDIES (EXTENSION*, (correct | money | law)+, EXTENSION*)>
+<!ELEMENT correct EMPTY>
+<!ELEMENT money   EMPTY>
+<!ELEMENT law     EMPTY>
+
+<!-- *********** STATEMENT ************ -->
+<!ELEMENT STATEMENT (EXTENSION*,
+    CONSEQUENCE?,
+    ((PURPOSE,RECIPIENT,RETENTION,DATA-GROUP+)|
+     (NON-IDENTIFIABLE,PURPOSE?,RECIPIENT?,RETENTION?,DATA-GROUP*)),
+    EXTENSION*)>
+
+<!-- ********** CONSEQUENCE *********** -->
+<!ELEMENT CONSEQUENCE (#PCDATA)>
+
+<!-- ******** NON-IDENTIFIABLE ******** -->
+<!ELEMENT NON-IDENTIFIABLE EMPTY>
+
+<!-- ************ PURPOSE ************* -->
+<!ELEMENT PURPOSE (EXTENSION*,
+   (current
+    | admin
+    | develop
+    | customization
+    | tailoring
+    | pseudo-analysis
+    | pseudo-decision
+    | individual-analysis
+    | individual-decision
+    | contact
+    | historical
+    | telemarketing
+    | other-purpose)+,
+    EXTENSION*)>
+
+<!ENTITY % pur_att
+         "required (always | opt-in | opt-out) #IMPLIED">
+<!ELEMENT current             EMPTY>
+<!ATTLIST current             %pur_att;>
+<!ELEMENT admin               EMPTY>
+<!ATTLIST admin               %pur_att;>
+<!ELEMENT develop             EMPTY>
+<!ATTLIST develop             %pur_att;>
+<!ELEMENT customization       EMPTY>
+<!ATTLIST customization       %pur_att;>
+<!ELEMENT tailoring           EMPTY>
+<!ATTLIST tailoring           %pur_att;>
+<!ELEMENT pseudo-analysis     EMPTY>
+<!ATTLIST pseudo-analysis     %pur_att;>
+<!ELEMENT pseudo-decision     EMPTY>
+<!ATTLIST pseudo-decision     %pur_att;>
+<!ELEMENT individual-analysis EMPTY>
+<!ATTLIST individual-analysis %pur_att;>
+<!ELEMENT individual-decision EMPTY>
+<!ATTLIST individual-decision %pur_att;>
+<!ELEMENT contact             EMPTY>
+<!ATTLIST contact             %pur_att;>
+<!ELEMENT profiling           EMPTY>
+<!ATTLIST profiling           %pur_att;>
+<!ELEMENT historical          EMPTY>
+<!ATTLIST historical          %pur_att;>
+<!ELEMENT telemarketing       EMPTY>
+<!ATTLIST telemarketing       %pur_att;>
+<!ELEMENT other-purpose       (#PCDATA)>
+<!ATTLIST other-purpose       %pur_att;>
+
+<!-- *********** RECIPIENT ************ -->
+<!ELEMENT RECIPIENT (EXTENSION*,
+    (ours
+    | same
+    | other-recipient
+    | delivery
+    | public
+    | unrelated)+,
+    EXTENSION*)>
+<!ELEMENT ours                  (recipient-description*)>
+<!ELEMENT same                  (recipient-description*)>
+<!ATTLIST same                  %pur_att;>
+<!ELEMENT other-recipient       (recipient-description*)>
+<!ATTLIST other-recipient       %pur_att;>
+<!ELEMENT delivery              (recipient-description*)>
+<!ATTLIST delivery              %pur_att;>
+<!ELEMENT public                (recipient-description*)>
+<!ATTLIST public                %pur_att;>
+<!ELEMENT unrelated             (recipient-description*)>
+<!ATTLIST unrelated             %pur_att;>
+<!ELEMENT recipient-description (#PCDATA)>
+
+<!-- *********** RETENTION ************ -->
+<!ELEMENT RETENTION (EXTENSION*,
+    (no-retention
+    | stated-purpose
+    | legal-requirement
+    | indefinitely
+    | business-practices),
+    EXTENSION*)>
+<!ELEMENT no-retention       EMPTY>
+<!ELEMENT stated-purpose     EMPTY>
+<!ELEMENT legal-requirement  EMPTY>
+<!ELEMENT indefinitely       EMPTY>
+<!ELEMENT business-practices EMPTY>
+
+<!-- ************** DATA ************** -->
+<!ELEMENT DATA-GROUP (EXTENSION*, DATA+, EXTENSION*)>
+<!ATTLIST DATA-GROUP
+    base     %URI;      "http://www.w3.org/TR/P3P/base" >
+<!ELEMENT DATA (#PCDATA | CATEGORIES)*>
+<!ATTLIST DATA
+    ref      %URI;      #REQUIRED
+    optional (yes | no) "no" >
+
+
+<!-- *********** DATA SCHEMA *********** -->
+<!ELEMENT DATASCHEMA (DATA-DEF | DATA-STRUCT | EXTENSION)*>
+<!ATTLIST DATASCHEMA xml:lang NMTOKEN #IMPLIED>
+<!ATTLIST DATASCHEMA xmlns CDATA #FIXED "http://www.w3.org/2002/01/P3Pv1">
+
+<!ELEMENT DATA-DEF    (CATEGORIES?, LONG-DESCRIPTION?)>
+<!ATTLIST DATA-DEF
+    name              ID    #REQUIRED
+    structref         %URI; #IMPLIED
+    short-description CDATA #IMPLIED  >
+
+<!ELEMENT DATA-STRUCT (CATEGORIES?, LONG-DESCRIPTION?)>
+<!ATTLIST DATA-STRUCT
+    name              ID    #REQUIRED
+    structref         %URI; #IMPLIED
+    short-description CDATA #IMPLIED  >
+
+<!-- *********** CATEGORIES *********** -->
+<!ELEMENT CATEGORIES (physical
+  | online
+  | uniqueid
+  | purchase
+  | financial
+  | computer
+  | navigation
+  | interactive
+  | demographic
+  | content
+  | state
+  | political
+  | health
+  | preference
+  | location
+  | government
+  | other-category)+>
+<!ELEMENT physical    EMPTY>
+<!ELEMENT online      EMPTY>
+<!ELEMENT uniqueid    EMPTY>
+<!ELEMENT purchase    EMPTY>
+<!ELEMENT financial   EMPTY>
+<!ELEMENT computer    EMPTY>
+<!ELEMENT navigation  EMPTY>
+<!ELEMENT interactive EMPTY>
+<!ELEMENT demographic EMPTY>
+<!ELEMENT content     EMPTY>
+<!ELEMENT state       EMPTY>
+<!ELEMENT political   EMPTY>
+<!ELEMENT health      EMPTY>
+<!ELEMENT preference  EMPTY>
+<!ELEMENT location    EMPTY>
+<!ELEMENT government  EMPTY>
+<!ELEMENT other-category EMPTY>
+
+<!-- *********** EXTENSION ************ -->
+<!ELEMENT EXTENSION ANY>
+<!ATTLIST EXTENSION
+    optional (yes | no) "yes" >
