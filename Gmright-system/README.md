@@ -1,3 +1,15 @@
+
+Net can never be down when net is able to sleep is only when the system is down that’s when net will be able to go for little break if user return and turn the system (on) again  https://github.com/gmright2/gmright2-station- Will step in and start playing the instructions in source of instrument way 
+This will be able to provoke echoes anywhere echoes exists in gmright2 command That’s when net will be able to return back online and tune with bucket In gmright2 pool this will allow all source of tools to be wake  incase something is going wrong with the service the system in netbook will be able to remind the administrators or developers inputs the is something wrote that’s not supposed to be in the application  that’s when loops /   https://github.com/gmright2/loops-2 from other side it will be able to enter in gmright2 and start the searching process of founding the problem  this is when rest will be playing the role of helping guide to found what is missing in the system duration because guide is able to enter in each application this is because guide is job is to make sure everything is where it have to be without any source of missing data or mistakes inside the command 
+
+Dashboard:
+[3.4]-x.3=%6.1/[v.4-solve for(x/y)> .3+6.1=0.0.0.0.0.0.0.0.0.0.0.0.0.9
+Command-program:”(5/~.2.x)>slope 
+
+This source of program is an example of solutions of gmright2 tools in source of command system codes#  
+Net-plus the book.s road to provide and to receive results in gmright2 technology 
+In station net is able to create music.pool for user to start playing on this planet music network service server gmright2 will provide source service 
+
 <https://www.gmright.org>self.host: development tools
 
 
@@ -63,6 +75,9 @@ C.w.w
 
 3
 3__^%<6.0.9>call:to_go.1.2.2.23
+
+
+Act as a data analyst for an organization on a mission to reduce deforestation. Clean the data, and execute SQL queries to understand which regions around the world have forests that have been shrinking in size, and which have the most significant forest area. Compile your answers and summarize your analysis into a report that can be shared with a leadership team.
 
 <georgemwasafi@gmail.com>founder contact.
 <htpps:www.github.com/georgemakulu/founder
