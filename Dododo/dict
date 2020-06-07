@@ -1,0 +1,26 @@
+<dl class='dict'>
+  <dt>dictionary
+  <dd>a book that lists the words of a language in alphabetical
+      order and gives their meaning, or that gives the equivalent
+      words in a different language.
+  <dt>glossary
+  <dd>an alphabetical list of terms or words found in or relating
+      to a specific subject, text, or dialect, with explanations; a
+      brief dictionary.
+</dl>
+<style>
+.dict > dt {
+  display: run-in;
+}
+.dict > dt::after {
+  content: ": "
+}
+</style>
+Which is formatted as:
+
+dictionary: a book that lists the words of a language
+in alphabetical order and explains their meaning.
+
+glossary: an alphabetical list of terms or words found
+in or relating to a specific subject, text, or dialect,
+with explanations; a brief dictionary.

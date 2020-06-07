@@ -1,0 +1,26 @@
+If it is misparented, like so:
+
+<div style="display:block;">
+  <div style="display:table-cell">...</div>
+</div>
+It will generate wrapper boxes around itself, producing a structure like:
+
+block box
+└anonymous table box
+ └anonymous table-row-group box
+  └anonymous table-row box
+   └table-cell box
+Even if the parent is another internal table element, if it’s not the correct one, wrapper boxes will be generated. For example, in the following markup:
+
+<div style="display:table;">
+  <div style="display:table-row">
+    <div style="display:table-cell">...</div>
+  </div>
+</div>
+Anonymous wrapper box generation will produce:
+
+table box
+└anonymous table-row-group box
+ └table-row box
+  └table-cell box
+This "fix-up" ensures that table layout has a predictable structure to operate on.
