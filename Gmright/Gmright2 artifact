@@ -36,6 +36,18 @@ Testing: <\ retest
             artifacts Visionary's: 7162.7272.8181.8171.9181.998
 
 Visionary's Len plug.
+Run actions/checkout@v2
+Syncing repository: gmright2-Coller/Gmright2.bucket.QA
+Getting Git version info
+Deleting the contents of '/home/runner/work/Gmright2.bucket.QA/Gmright2.bucket.QA'
+Initializing the repository
+Disabling automatic garbage collection
+Setting up auth
+Fetching the repository
+Determining the checkout info
+Checking out the ref
+/usr/bin/git log -1 --format='%H'
+'3856b1e47497f62fe52fb49c530fe6e003c58cdb'
 
 
 
