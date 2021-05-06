@@ -1,0 +1,5 @@
+- pipe: snyk/snyk-scan:0.4.6
+  variables:
+    SNYK_TOKEN: "<string>"
+    # LANGUAGE: "<string>" # Required unless SNYK_TEST_JSON_INPUT is set
+    # IMAGE_NAME: "<string>" # Only required i
