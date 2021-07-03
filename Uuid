@@ -1,0 +1,21 @@
+https://api.bitbucket.org/2.0/workspaces/GeorgeMAKULU/pipelines-config/identity/oidc
+
+ari:cloud:bitbucket::workspace/1d29ad47-6aee-442b-abaf-badce54aa9fc
+
+{
+	"sub": "{7d67115e-9668-4699-8434-46730bf9a2e9}:{d0cd2a3c-306e-416b-84a0-84fc564121e3}:{stepUuid}",
+	"aud": "ari:cloud:bitbucket::workspace/1d29ad47-6aee-442b-abaf-badce54aa9fc",
+	"stepUuid": "{xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx}",
+	"deploymentEnvironmentUuid": "{d0cd2a3c-306e-416b-84a0-84fc564121e3}",
+	"iss": "https://api.bitbucket.org/2.0/workspaces/GeorgeMAKULU/pipelines-config/identity/oidc",
+	"repositoryUuid": "{7d67115e-9668-4699-8434-46730bf9a2e9}",
+	"branchName": "xxxxxxxxx",
+	"exp": "xxxxxxxxxx",
+	"iat": "xxxxxxxxxx",
+	"pipelineUuid": "{xxxxx-xxxxx-xxxx-xxxx-xxxxxxxxxxx}",
+	"workspaceUuid": "{1d29ad47-6aee-442b-abaf-badce54aa9fc}"
+}
+
+
+Gmright2 Uuidd: {1d29ad47-6aee-442b-abaf-badce54aa9fc}
+Gmright2 uuidd : {7d67115e-9668-4699-8434-46730bf9a2e9}
